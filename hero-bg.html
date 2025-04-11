@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘背景</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><g fill="white"><circle cx="50" cy="50" r="1"/><circle cx="150" cy="80" r="1.5"/><circle cx="350" cy="30" r="1"/><circle cx="550" cy="150" r="1"/><circle cx="750" cy="250" r="1.5"/><circle cx="950" cy="150" r="1"/><circle cx="150" cy="350" r="1"/><circle cx="250" cy="450" r="1.5"/><circle cx="550" cy="550" r="1"/><circle cx="750" cy="750" r="1"/><circle cx="950" cy="950" r="1.5"/><circle cx="150" cy="950" r="1"/><circle cx="250" cy="750" r="1.5"/><circle cx="450" cy="850" r="1"/><circle cx="650" cy="650" r="1"/><circle cx="850" cy="350" r="1.5"/></g></svg>');
+            opacity: 0.7;
+        }
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #e6b980);
+            box-shadow: 0 0 30px rgba(230, 185, 128, 0.8);
+        }
+        .tarot-symbol {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="2"/><path d="M50,5 L50,95 M5,50 L95,50 M20,20 L80,80 M20,80 L80,20" fill="none" stroke="white" stroke-width="1"/></svg>');
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="moon"></div>
+    <div class="tarot-symbol"></div>
+</body>
+</html>

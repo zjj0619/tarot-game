@@ -1,0 +1,170 @@
+/* 卡牌基础样式 */
+.tarot-card {
+    width: 150px;
+    height: 250px;
+    perspective: 1000px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.tarot-card.drawn .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* 卡牌设计 */
+.card-design {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.card-border {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e6b980;
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #e6b980;
+}
+
+/* 卡牌元素 */
+.card-number {
+    font-size: 24px;
+    font-family: 'Times New Roman', serif;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #e6b980;
+}
+
+.card-symbol {
+    font-size: 18px;
+    font-family: '楷体', KaiTi, serif;
+    margin: 10px 0;
+    letter-spacing: 3px;
+    opacity: 0.9;
+}
+
+.card-decoration {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid #e6b980;
+    border-radius: 50%;
+}
+
+.lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #e6b980;
+    opacity: 0.6;
+}
+
+.line:nth-child(1) { transform: rotate(0deg); }
+.line:nth-child(2) { transform: rotate(60deg); }
+.line:nth-child(3) { transform: rotate(120deg); }
+
+.card-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 3px #e6b980;
+}
+
+/* 卡牌背面图案 */
+.card-pattern {
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, #e6b980 25%, transparent 25%) -10px 0,
+        linear-gradient(-45deg, #e6b980 25%, transparent 25%) -10px 0,
+        linear-gradient(45deg, transparent 75%, #e6b980 75%),
+        linear-gradient(-45deg, transparent 75%, #e6b980 75%);
+    background-size: 20px 20px;
+    background-color: #2c1810;
+    opacity: 0.2;
+}
+
+/* 动画效果 */
+.tarot-card:hover .card-inner {
+    transform: scale(1.05);
+}
+
+.tarot-card.drawn:hover .card-inner {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+/* 洗牌动画 */
+@keyframes shuffle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shuffling {
+    animation: shuffle 0.5s ease-in-out;
+}
+
+/* 切牌动画 */
+@keyframes cut {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+.cutting {
+    animation: cut 0.5s ease-in-out;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塔罗牌图像展示</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a2e;
+            color: #e6b980;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(230, 185, 128, 0.3);
+        }
+        .card-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: #e6b980;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            fill: rgba(230, 185, 128, 0.2);
+            filter: drop-shadow(0 0 5px rgba(230, 185, 128, 0.5));
+        }
+        .card-title {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .card-description {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 5px;
+            color: rgba(230, 185, 128, 0.7);
+        }
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #e6b980;
+            font-size: 28px;
+            position: relative;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e6b980, transparent);
+        }
+    </style>
+</head>
+<body>
+    <h1>塔罗牌图像集</h1>
+    
+    <div class="container">
+        <!-- 愚者牌 -->
+        <div class="card-container">
+            <svg width="150" height="250" viewBox="0 0 150 250">
+                <rect class="card" x="10" y="10" width="130" height="200" rx="5" ry="5" />
+                <text x="75" y="70" text-anchor="middle" fill="#e6b980" font-size="16">0</text>
+                <text x="75" y="110" text-anchor="middle" fill="#e6b980" font-size="14">THE FOOL</text>
+                <circle cx="75" cy="150" r="30" fill="none" stroke="#e6b980" stroke-width="1.5" />
+                <path d="M75,120 L75,180 M45,150 L105,150" stroke="#e6b980" stroke-width="1.5" fill="none" />
+            </svg>
+            <div class="card-title">愚者</div>
+            <div class="card-description">新的开始，冒险</div>
+        </div>
+        
+        <!-- 魔术师牌 -->
+        <div class="card-container">
+            <svg width="150" height="250" viewBox="0 0 150 250">
+                <rect class="card" x="10" y="10" width="130" height="200" rx="5" ry="5" />
+                <text x="75" y="70" text-anchor="middle" fill="#e6b980" font-size="16">I</text>
+                <text x="75" y="110" text-anchor="middle" fill="#e6b980" font-size="14">THE MAGICIAN</text>
+                <line x1="45" y1="150" x2="105" y2="150" stroke="#e6b980" stroke-width="1.5" />
+                <line x1="75" y1="130" x2="75" y2="170" stroke="#e6b980" stroke-width="1.5" />
+                <circle cx="75" cy="150" r="25" fill="none" stroke="#e6b980" stroke-width="1.5" />
+            </svg>
+            <div class="card-title">魔术师</div>
+            <div class="card-description">创造力，技能</div>
+        </div>
+        
+        <!-- 女祭司牌 -->
+        <div class="card-container">
+            <svg width="150" height="250" viewBox="0 0 150 250">
+                <rect class="card" x="10" y="10" width="130" height="200" rx="5" ry="5" />
+                <text x="75" y="70" text-anchor="middle" fill="#e6b980" font-size="16">II</text>
+                <text x="75" y="110" text-anchor="middle" fill="#e6b980" font-size="14">HIGH PRIESTESS</text>
+                <rect x="55" y="130" width="40" height="60" fill="none" stroke="#e6b980" stroke-width="1.5" />
+                <circle cx="75" cy="130" r="10" fill="none" stroke="#e6b980" stroke-width="1.5" />
+            </svg>
+            <div class="card-title">女祭司</div>
+            <div class="card-description">直觉，神秘</div>
+        </div>
+        
+        <!-- 皇后牌 -->
+        <div class="card-container">
+            <svg width="150" height="250" viewBox="0 0 150 250">
+                <rect class="card" x="10" y="10" width="130" height="200" rx="5" ry="5" />
+                <text x="75" y="70" text-anchor="middle" fill="#e6b980" font-size="16">III</text>
+                <text x="75" y="110" text-anchor="middle" fill="#e6b980" font-size="14">THE EMPRESS</text>
+                <circle cx="75" cy="150" r="25" fill="none" stroke="#e6b980" stroke-width="1.5" />
+                <path d="M75,125 L75,175 M60,135 L90,165 M60,165 L90,135" stroke="#e6b980" stroke-width="1.5" fill="none" />
+            </svg>
+            <div class="card-title">皇后</div>
+            <div class="card-description">丰收，母性</div>
+        </div>
+    </div>
+</body>
+</html>

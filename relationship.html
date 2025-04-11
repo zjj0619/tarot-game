@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系牌阵</title>
+    <link rel="stylesheet" href="../../css/spread-toggle.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a2e;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: #e6b980;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            fill: rgba(230, 185, 128, 0.2);
+            filter: drop-shadow(0 0 5px rgba(230, 185, 128, 0.5));
+        }
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #e6b980;
+            text-anchor: middle;
+        }
+        .heart {
+            fill: none;
+            stroke: rgba(255, 107, 107, 0.7);
+            stroke-width: 2;
+        }
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            fill: rgba(230, 185, 128, 0.7);
+            text-anchor: middle;
+        }
+        .bg-element {
+            fill: none;
+            stroke: rgba(230, 185, 128, 0.15);
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+    <svg width="250" height="600" viewBox="0 0 250 600">
+        <!-- 背景元素 -->
+        <rect class="bg-element" x="25" y="25" width="200" height="550" rx="10" ry="10" />
+        <circle class="bg-element" cx="125" cy="300" r="110" />
+        
+        <!-- 心形背景 -->
+        <path class="heart" d="M125,200 C125,200 165,160 205,200 C245,240 125,350 125,350 C125,350 5,240 45,200 C85,160 125,200 125,200 Z" />
+        
+        <!-- 卡牌 -->
+        <!-- 顶部卡牌 -->
+        <rect class="card" x="95" y="50" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 中上卡牌 -->
+        <rect class="card" x="50" y="180" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="140" y="180" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 中下卡牌 -->
+        <rect class="card" x="95" y="310" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 底部卡牌 -->
+        <rect class="card" x="50" y="440" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="140" y="440" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 标签 -->
+        <text class="label" x="125" y="40">关系现状</text>
+        <text class="label" x="80" y="170">你自己</text>
+        <text class="label" x="170" y="170">对方</text>
+        <text class="label" x="125" y="300">关系基础</text>
+        <text class="label" x="80" y="430">过去影响</text>
+        <text class="label" x="170" y="430">未来发展</text>
+        
+        <!-- 描述性文本 -->
+        <text class="description" x="125" y="20">关系的当前状态</text>
+        <text class="description" x="80" y="150">你在关系中的角色和态度</text>
+        <text class="description" x="170" y="150">对方在关系中的角色和态度</text>
+        <text class="description" x="125" y="280">关系的基础和核心</text>
+        <text class="description" x="80" y="410">过去对关系的影响</text>
+        <text class="description" x="170" y="410">关系的未来走向</text>
+        
+        <!-- 标题 -->
+        <text class="label" x="125" y="570">关系牌阵</text>
+        <text class="description" x="125" y="585">关系动态的解读</text>
+    </svg>
+    <script src="../../js/spread-toggle.js"></script>
+</body>
+</html>

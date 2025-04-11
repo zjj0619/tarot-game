@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凯尔特十字牌阵</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a2e;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: #e6b980;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            fill: rgba(230, 185, 128, 0.2);
+            filter: drop-shadow(0 0 5px rgba(230, 185, 128, 0.5));
+        }
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #e6b980;
+            text-anchor: middle;
+        }
+        .number {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            fill: #ffffff;
+            text-anchor: middle;
+            dominant-baseline: central;
+        }
+        .connection {
+            fill: none;
+            stroke: rgba(230, 185, 128, 0.3);
+            stroke-width: 1.5;
+            stroke-dasharray: 5,5;
+        }
+        .cross-bg {
+            fill: none;
+            stroke: rgba(230, 185, 128, 0.15);
+            stroke-width: 1;
+        }
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            fill: rgba(230, 185, 128, 0.7);
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+    <svg width="500" height="600" viewBox="0 0 500 600">
+        <!-- 背景图案 -->
+        <circle class="cross-bg" cx="250" cy="250" r="200" />
+        <path class="cross-bg" d="M50,250 L450,250 M250,50 L250,450" />
+        
+        <!-- 连接线 -->
+        <path class="connection" d="M250,250 L350,200" />
+        <path class="connection" d="M250,250 L350,320" />
+        <path class="connection" d="M250,250 L350,80" />
+        <path class="connection" d="M250,250 L350,420" />
+        <path class="connection" d="M250,250 L150,200" />
+        <path class="connection" d="M250,250 L150,320" />
+        <path class="connection" d="M250,250 L150,80" />
+        <path class="connection" d="M250,250 L150,420" />
+        
+        <!-- 中心十字 -->
+        <rect class="card" x="220" y="200" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="200" y="220" width="100" height="60" rx="5" ry="5" />
+        
+        <!-- 右侧卡牌 -->
+        <rect class="card" x="320" y="150" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="320" y="270" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="320" y="30" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="320" y="370" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 左侧卡牌 -->
+        <rect class="card" x="120" y="150" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="120" y="270" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="120" y="30" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="120" y="370" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 编号 -->
+        <text class="number" x="250" y="250">1</text>
+        <text class="number" x="280" y="220">2</text>
+        <text class="number" x="350" y="200">3</text>
+        <text class="number" x="350" y="320">4</text>
+        <text class="number" x="350" y="80">5</text>
+        <text class="number" x="350" y="420">6</text>
+        <text class="number" x="150" y="200">7</text>
+        <text class="number" x="150" y="320">8</text>
+        <text class="number" x="150" y="80">9</text>
+        <text class="number" x="150" y="420">10</text>
+        
+        <!-- 描述性标签 -->
+        <text class="description" x="250" y="280">当前情况</text>
+        <text class="description" x="280" y="190">阻碍</text>
+        <text class="description" x="350" y="260">理想结果</text>
+        <text class="description" x="350" y="380">近期发展</text>
+        <text class="description" x="350" y="140">过去影响</text>
+        <text class="description" x="350" y="480">未来趋势</text>
+        <text class="description" x="150" y="260">自我认知</text>
+        <text class="description" x="150" y="380">环境影响</text>
+        <text class="description" x="150" y="140">希望与恐惧</text>
+        <text class="description" x="150" y="480">最终结果</text>
+        
+        <!-- 标题 -->
+        <text class="label" x="250" y="520">凯尔特十字牌阵</text>
+        <text class="description" x="250" y="540">全面解读过去、现在与未来</text>
+    </svg>
+</body>
+</html>
