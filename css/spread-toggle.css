@@ -1,0 +1,45 @@
+/**
+ * 牌阵隐藏/展开功能的样式
+ */
+
+/* 展开/收起指示器样式 */
+.toggle-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(230, 185, 128, 0.2);
+    border: 1px solid #e6b980;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #e6b980;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(230, 185, 128, 0.3);
+}
+
+.toggle-indicator:hover {
+    background-color: rgba(230, 185, 128, 0.3);
+    box-shadow: 0 0 8px rgba(230, 185, 128, 0.5);
+}
+
+/* 展开状态的指示器样式 */
+.toggle-indicator.expanded {
+    background-color: rgba(230, 185, 128, 0.3);
+}
+
+/* SVG容器的过渡效果 */
+svg {
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .toggle-indicator {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+}

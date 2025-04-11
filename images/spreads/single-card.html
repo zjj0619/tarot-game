@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单卡牌阵</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a2e;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: #e6b980;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            fill: rgba(230, 185, 128, 0.2);
+            filter: drop-shadow(0 0 5px rgba(230, 185, 128, 0.5));
+        }
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            fill: #e6b980;
+            text-anchor: middle;
+        }
+        .card-bg {
+            fill: none;
+            stroke: rgba(230, 185, 128, 0.15);
+            stroke-width: 1;
+        }
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            fill: rgba(230, 185, 128, 0.7);
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+    <svg width="200" height="350" viewBox="0 0 200 350">
+        <!-- 背景图案 -->
+        <circle class="card-bg" cx="100" cy="125" r="100" />
+        <rect class="card-bg" x="25" y="25" width="150" height="200" rx="10" ry="10" />
+        
+        <!-- 卡牌 -->
+        <rect class="card" x="50" y="50" width="100" height="150" rx="5" ry="5" />
+        
+        <!-- 标签 -->
+        <text class="label" x="100" y="230">当前情况</text>
+        <text class="description" x="100" y="250">反映你目前所处的状态和环境</text>
+        
+        <!-- 标题 -->
+        <text class="label" x="100" y="290">单卡牌阵</text>
+        <text class="description" x="100" y="310">简单直接的指引</text>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职业发展牌阵</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a2e;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: #e6b980;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            fill: rgba(230, 185, 128, 0.2);
+            filter: drop-shadow(0 0 5px rgba(230, 185, 128, 0.5));
+        }
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #e6b980;
+            text-anchor: middle;
+        }
+        .path {
+            fill: none;
+            stroke: rgba(106, 48, 147, 0.5);
+            stroke-width: 2;
+            stroke-dasharray: 5,5;
+        }
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            fill: rgba(230, 185, 128, 0.7);
+            text-anchor: middle;
+        }
+        .bg-element {
+            fill: none;
+            stroke: rgba(230, 185, 128, 0.15);
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+    <svg width="300" height="400" viewBox="0 0 300 400">
+        <!-- 背景元素 -->
+        <rect class="bg-element" x="25" y="25" width="250" height="320" rx="10" ry="10" />
+        <circle class="bg-element" cx="150" cy="175" r="130" />
+        
+        <!-- 路径背景 -->
+        <path class="path" d="M50,175 L250,175 M150,50 L150,300" />
+        
+        <!-- 卡牌 -->
+        <rect class="card" x="120" y="120" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="50" y="120" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="190" y="120" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="50" y="230" width="60" height="100" rx="5" ry="5" />
+        <rect class="card" x="190" y="230" width="60" height="100" rx="5" ry="5" />
+        
+        <!-- 标签 -->
+        <text class="label" x="150" y="100">当前职业状况</text>
+        <text class="label" x="80" y="100">挑战</text>
+        <text class="label" x="220" y="100">优势</text>
+        <text class="label" x="80" y="340">应该避免的</text>
+        <text class="label" x="220" y="340">应该追求的</text>
+        
+        <!-- 描述性文本 -->
+        <text class="description" x="150" y="80">你目前的职业状态</text>
+        <text class="description" x="80" y="80">当前面临的职业挑战</text>
+        <text class="description" x="220" y="80">你的职业优势</text>
+        <text class="description" x="80" y="320">职业发展中应避免的陷阱</text>
+        <text class="description" x="220" y="320">职业发展中应把握的机会</text>
+        
+        <!-- 标题 -->
+        <text class="label" x="150" y="370">职业发展牌阵</text>
+        <text class="description" x="150" y="390">职业道路的指引</text>
+    </svg>
+</body>
+</html>

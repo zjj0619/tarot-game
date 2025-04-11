@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘塔罗 | 智能占卜</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景星空效果 -->
+    <div class="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-moon"></i> 神秘塔罗</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#reading">开始占卜</a></li>
+                    <li><a href="#about">关于塔罗</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主页区域 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>探索命运的奥秘</h2>
+                <p>通过古老的塔罗智慧，结合现代AI技术，揭示你生活中的隐藏真相</p>
+                <a href="#reading" class="btn glow-btn">开始占卜之旅</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 占卜区域 -->
+    <section id="reading" class="reading-section">
+        <div class="container">
+            <h2 class="section-title">塔罗占卜</h2>
+            
+            <!-- 步骤指示器 -->
+            <div class="steps-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">选择牌阵</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">设定问题</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">抽取塔罗</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-text">解读结果</div>
+                </div>
+            </div>
+            
+            <!-- 步骤1：选择牌阵 -->
+            <div class="step-content active" id="step-1">
+                <h3>选择适合你的牌阵</h3>
+                <p class="step-description">不同的牌阵适合不同类型的问题，请选择最适合你当前需求的牌阵</p>
+                
+                <!-- 在牌阵选择部分添加以下代码 -->
+                <div class="spread-selection">
+                    <div class="spread-card" data-spread="single">
+                        <iframe src="images/spreads/single-card.html" frameborder="0" scrolling="no" class="spread-image"></iframe>
+                        <h3>单卡牌阵</h3>
+                        <p>适合快速了解某个具体问题的答案</p>
+                        <button class="select-btn">选择</button>
+                    </div>
+                    <div class="spread-card" data-spread="three">
+                        <iframe src="images/spreads/three-card.html" frameborder="0" scrolling="no" class="spread-image"></iframe>
+                        <h3>三卡牌阵</h3>
+                        <p>过去、现在、未来的简单解读</p>
+                        <button class="select-btn">选择</button>
+                    </div>
+                    <div class="spread-card" data-spread="celtic">
+                        <iframe src="images/spreads/celtic-cross.html" frameborder="0" scrolling="no" class="spread-image"></iframe>
+                        <h3>凯尔特十字牌阵</h3>
+                        <p>全面分析复杂问题的各个方面</p>
+                        <button class="select-btn">选择</button>
+                    </div>
+                    <div class="spread-card" data-spread="relationship">
+                        <iframe src="images/spreads/relationship.html" frameborder="0" scrolling="no" class="spread-image"></iframe>
+                        <h3>关系牌阵</h3>
+                        <p>专注于人际关系分析</p>
+                        <button class="select-btn">选择</button>
+                    </div>
+                    <div class="spread-card" data-spread="career">
+                        <iframe src="images/spreads/career.html" frameborder="0" scrolling="no" class="spread-image"></iframe>
+                        <h3>职业发展牌阵</h3>
+                        <p>针对职业和事业发展的专门解读</p>
+                        <button class="select-btn">选择</button>
+                    </div>
+                </div>
+                
+                <div class="step-navigation">
+                    <button class="next-btn" disabled>下一步</button>
+                </div>
+            </div>
+            
+            <!-- 步骤2：设定问题 -->
+            <div class="step-content" id="step-2">
+                <h3>设定你的问题</h3>
+                <p class="step-description">请在心中默念你的问题，或在下方输入框中描述你的疑问</p>
+                
+                <div class="question-form">
+                    <textarea id="question-input" placeholder="例如：我的职业发展方向如何？我与某人的关系将如何发展？我应该如何解决当前的困境？"></textarea>
+                    <p class="form-tip">提示：问题越具体，解读结果越准确</p>
+                </div>
+                
+                <div class="step-navigation">
+                    <button class="prev-btn">上一步</button>
+                    <button class="next-btn">下一步</button>
+                </div>
+            </div>
+            
+            <!-- 步骤3：抽取塔罗 -->
+            <div class="step-content" id="step-3">
+                <h3>抽取塔罗牌</h3>
+                <p class="step-description">请集中精神，从牌堆中抽取所需的卡牌</p>
+                
+                <div class="tarot-deck-container">
+                    <div class="deck-controls">
+                        <button id="shuffle-btn" class="action-btn"><i class="fas fa-random"></i> 洗牌</button>
+                        <button id="cut-btn" class="action-btn"><i class="fas fa-cut"></i> 切牌</button>
+                    </div>
+                    
+                    <div class="tarot-deck">
+                        <!-- 牌堆将通过JavaScript动态生成 -->
+                    </div>
+                    
+                    <div class="draw-instruction">
+                        <p>请点击牌堆抽取卡牌</p>
+                        <div class="cards-counter">已抽取: <span id="drawn-count">0</span>/<span id="required-count">0</span></div>
+                    </div>
+                </div>
+                
+                <div class="step-navigation">
+                    <button class="prev-btn">上一步</button>
+                    <button class="next-btn" disabled>查看解读</button>
+                </div>
+            </div>
+            
+            <!-- 步骤4：解读结果 -->
+            <div class="step-content" id="step-4">
+                <h3>塔罗解读</h3>
+                <div class="reading-result">
+                    <div class="spread-display">
+                        <!-- 牌阵展示区域，将通过JavaScript动态生成 -->
+                    </div>
+                    
+                    <div class="ai-interpretation">
+                        <div class="interpretation-header">
+                            <h4><i class="fas fa-brain"></i> AI解读</h4>
+                            <div class="loading-indicator">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="interpretation-content">
+                            <!-- AI解读内容将在这里显示 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="save-reading" class="action-btn"><i class="fas fa-save"></i> 保存解读</button>
+                    <button id="share-reading" class="action-btn"><i class="fas fa-share-alt"></i> 分享</button>
+                    <button id="new-reading" class="action-btn"><i class="fas fa-redo"></i> 新的占卜</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 关于塔罗区域 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">关于塔罗</h2>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/tarot-history.jpg" alt="塔罗牌历史">
+                </div>
+                <div class="about-text">
+                    <h3>塔罗的起源与智慧</h3>
+                    <p>塔罗牌起源于15世纪的欧洲，最初是一种纸牌游戏，后来逐渐演变为占卜工具。塔罗牌由78张牌组成，分为大阿卡纳(22张)和小阿卡纳(56张)。</p>
+                    <p>每张塔罗牌都蕴含着丰富的象征意义和哲学智慧，通过解读牌面的组合，可以帮助我们理解当前的处境，洞察潜在的可能性，并为未来的决策提供参考。</p>
+                    <p>在现代社会，塔罗牌已经成为一种自我反思和心理探索的工具，帮助人们连接潜意识，发现内心深处的智慧。</p>
+                </div>
+            </div>
+            
+            <div class="tarot-categories">
+                <div class="category">
+                    <h4>大阿卡纳</h4>
+                    <p>代表人生重大主题和灵性旅程的22张牌</p>
+                </div>
+                <div class="category">
+                    <h4>小阿卡纳</h4>
+                    <p>分为权杖、圣杯、宝剑和钱币四个系列，代表日常生活的各个方面</p>
+                </div>
+                <div class="category">
+                    <h4>牌阵</h4>
+                    <p>不同的牌阵布局适合不同类型的问题和解读深度</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 联系我们区域 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>留言咨询</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>其他联系方式</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:2081957242@qq.com">2081957242@qq.com</a></li>
+                        <li><i class="fab fa-weixin"></i> 微信公众号：神秘塔罗</li>
+                        <li><i class="fab fa-weibo"></i> 微博：@神秘塔罗占卜</li>
+                    </ul>
+                    
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-qq"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-bilibili"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-moon"></i> 神秘塔罗</h3>
+                    <p>探索命运的奥秘</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#reading">开始占卜</a></li>
+                        <li><a href="#about">关于塔罗</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>订阅我们</h4>
+                    <p>获取最新的塔罗解读和神秘学知识</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="输入您的邮箱">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 神秘塔罗. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 模态框 -->
+    <div class="modal" id="card-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- 卡牌详情将在这里显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
